@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-[#FAF9F7] text-neutral-900 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-neutral-900 text-white;
+  }
+  :focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Leaf animation */
+@keyframes leaf-grow {
+  from { transform: scale(0.15); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.leaf-grow {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: leaf-grow 900ms cubic-bezier(.2,.8,.2,1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .leaf-grow { animation: none; }
+  html { scroll-behavior: auto; }
+}
