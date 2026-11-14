@@ -6,6 +6,17 @@ import Link from "next/link";
 import { ArrowLeft, Save, AlertCircle, Trash2 } from "lucide-react";
 
 const IMAGE_PRESETS = [
+  { label: "Photo A1", url: "/images/products/a1.JPG" },
+  { label: "Photo A2", url: "/images/products/a2.JPG" },
+  { label: "Photo A3", url: "/images/products/a3.JPG" },
+  { label: "Photo A4", url: "/images/products/a4.JPG" },
+  { label: "Photo A5", url: "/images/products/a5.JPG" },
+  { label: "Photo A6", url: "/images/products/a6.JPG" },
+  { label: "Photo A7", url: "/images/products/a7.JPG" },
+  { label: "Photo A8", url: "/images/products/a8.JPG" },
+  { label: "Photo A9", url: "/images/products/a9.JPG" },
+  { label: "Photo A10", url: "/images/products/a10.JPG" },
+  { label: "Photo AP", url: "/images/products/ap.JPG" },
   { label: "Monstera", url: "/images/products/monstera.jpg" },
   { label: "Fiddle Leaf", url: "/images/products/fiddle-leaf.jpg" },
   { label: "Trailing Ivy", url: "/images/products/ivy.jpg" },
