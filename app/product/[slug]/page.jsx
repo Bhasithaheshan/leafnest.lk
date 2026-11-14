@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PlantArt from "@/components/PlantArt";
 import ProductCard, { StockTag } from "@/components/ProductCard";
 import ProductActions from "@/components/ProductActions";
+import ProductGallery from "@/components/ProductGallery";
 import { getProduct, getCategory, products, formatPrice } from "@/lib/products";
 import { getProductById, getAllProducts } from "@/lib/dataService";
 import { whatsappLink } from "@/lib/config";
@@ -56,29 +57,16 @@ export default async function ProductPage({ params }) {
 
         {/* Main Product Showcase */}
         <div className="mt-8 grid gap-12 lg:grid-cols-12">
-          {/* Left: Product Image */}
+          {/* Left: Product Image Gallery */}
           <div className="lg:col-span-6">
-            <div className="relative aspect-square w-full overflow-hidden rounded-3xl border border-neutral-200/80 bg-white shadow-sm">
-              {p.image ? (
-                <Image
-                  src={p.image}
-                  alt={p.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              ) : (
-                <PlantArt
-                  kind={p.art || "artificial"}
-                  tint={p.tint || "#EFEBDD"}
-                  className="aspect-square w-full"
-                />
-              )}
-              <div className="absolute left-4 top-4">
-                <StockTag stock={p.stock} />
-              </div>
-            </div>
+            <ProductGallery
+              images={p.images && p.images.length > 0 ? p.images : [p.image].filter(Boolean)}
+              title={p.name}
+              stock={p.stock}
+              badge={p.badge}
+              art={p.art || "artificial"}
+              tint={p.tint || "#EFEBDD"}
+            />
           </div>
 
           {/* Right: Product Details & WhatsApp Order */}

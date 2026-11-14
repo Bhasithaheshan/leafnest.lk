@@ -21,6 +21,11 @@
       "Keep away from harsh direct outdoor rain"
     ],
     "image": "/images/products/monstera.jpg",
+    "images": [
+      "/images/products/monstera.jpg",
+      "/images/hero-composition.jpg",
+      "/images/cat-artificial-hd.jpg"
+    ],
     "badge": "Best Seller",
     "featured": true,
     "createdAt": "2026-11-01T10:00:00.000Z"
@@ -47,6 +52,11 @@
       "Keep away from prolonged outdoor sun exposure"
     ],
     "image": "/images/products/fiddle-leaf.jpg",
+    "images": [
+      "/images/products/fiddle-leaf.jpg",
+      "/images/hero-plants-hd.jpg",
+      "/images/cat-artificial.webp"
+    ],
     "badge": "Popular",
     "featured": true,
     "createdAt": "2026-11-02T10:00:00.000Z"

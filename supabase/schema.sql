@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS public.products (
     features JSONB DEFAULT '[]'::jsonb,
     care JSONB DEFAULT '[]'::jsonb,
     image TEXT DEFAULT '/images/cat-artificial.webp',
+    images JSONB DEFAULT '[]'::jsonb,
     badge TEXT DEFAULT NULL,
     featured BOOLEAN DEFAULT false,
     created_at TIMESTAMPTZ DEFAULT NOW(),

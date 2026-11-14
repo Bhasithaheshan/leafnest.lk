@@ -34,6 +34,7 @@ export default function AddProductPage() {
     badge: "",
     featured: false,
     image: "/images/products/monstera.jpg",
+    extraImagesText: "",
     size: "",
     material: "",
     description: "",
@@ -70,6 +71,13 @@ export default function AddProductPage() {
         .map((s) => s.trim())
         .filter(Boolean);
 
+      const extraImages = form.extraImagesText
+        .split("\n")
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+      const allImages = [form.image.trim(), ...extraImages].filter(Boolean);
+
       const payload = {
         name: form.name.trim(),
         slug: form.slug.trim(),
@@ -79,7 +87,8 @@ export default function AddProductPage() {
         stock: form.stock,
         badge: form.badge.trim() || null,
         featured: form.featured,
-        image: form.image.trim(),
+        image: allImages[0] || "/images/cat-artificial.webp",
+        images: allImages,
         size: form.size.trim(),
         material: form.material.trim(),
         description: form.description.trim(),
@@ -262,17 +271,23 @@ export default function AddProductPage() {
 
         {/* Photography & Imagery */}
         <div className="rounded-2xl border border-white/10 bg-[#141d17] p-6 space-y-4">
-          <h2 className="text-sm font-bold text-white border-b border-white/10 pb-3">
-            Product Photography
-          </h2>
+          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+            <h2 className="text-sm font-bold text-white">
+              Product Photography & Gallery
+            </h2>
+            <span className="text-[11px] text-emerald-400 font-medium">
+              Multiple photos supported
+            </span>
+          </div>
 
           <div>
             <label className="block text-xs font-medium text-neutral-300 mb-1">
-              Image URL / Path *
+              Primary Cover Photo URL *
             </label>
             <input
               type="text"
               required
+              placeholder="/images/products/monstera.jpg"
               value={form.image}
               onChange={(e) => setForm({ ...form, image: e.target.value })}
               className="w-full rounded-xl border border-white/10 bg-black/40 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 outline-none focus:border-emerald-500/80 font-mono"
@@ -280,23 +295,54 @@ export default function AddProductPage() {
           </div>
 
           <div>
+            <label className="block text-xs font-medium text-neutral-300 mb-1">
+              Additional Gallery Photos (One image URL per line)
+            </label>
+            <textarea
+              rows={3}
+              placeholder={"/images/products/monstera-2.jpg\n/images/products/monstera-close-up.jpg"}
+              value={form.extraImagesText}
+              onChange={(e) => setForm({ ...form, extraImagesText: e.target.value })}
+              className="w-full rounded-xl border border-white/10 bg-black/40 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 outline-none focus:border-emerald-500/80 font-mono text-[11px]"
+            />
+            <p className="mt-1 text-[11px] text-neutral-500">
+              Customers will see these as clickable thumbnails in the product gallery.
+            </p>
+          </div>
+
+          <div>
             <span className="text-[11px] text-neutral-400 font-medium mb-2 block">
-              Quick Presets (or paste your own hosted image URL):
+              Quick Presets (Click to set as primary, or click &quot;+ Add&quot; to append to gallery):
             </span>
             <div className="flex flex-wrap gap-2">
               {IMAGE_PRESETS.map((p) => (
-                <button
-                  key={p.label}
-                  type="button"
-                  onClick={() => setForm({ ...form, image: p.url })}
-                  className={`rounded-lg px-2.5 py-1 text-[11px] font-medium border transition-colors ${
-                    form.image === p.url
-                      ? "border-emerald-500 bg-emerald-500/20 text-emerald-300"
-                      : "border-white/10 bg-white/5 text-neutral-300 hover:bg-white/10"
-                  }`}
-                >
-                  {p.label}
-                </button>
+                <div key={p.label} className="inline-flex rounded-lg border border-white/10 bg-white/5 overflow-hidden text-[11px]">
+                  <button
+                    type="button"
+                    onClick={() => setForm({ ...form, image: p.url })}
+                    className={`px-2.5 py-1 font-medium transition-colors ${
+                      form.image === p.url
+                        ? "bg-emerald-500/20 text-emerald-300 font-bold"
+                        : "text-neutral-300 hover:bg-white/10"
+                    }`}
+                  >
+                    {p.label}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const current = form.extraImagesText.trim();
+                      setForm({
+                        ...form,
+                        extraImagesText: current ? `${current}\n${p.url}` : p.url,
+                      });
+                    }}
+                    title="Add to gallery photos"
+                    className="border-l border-white/10 px-2 py-1 text-emerald-400 hover:bg-emerald-500/20 font-bold"
+                  >
+                    + Add
+                  </button>
+                </div>
               ))}
             </div>
           </div>
