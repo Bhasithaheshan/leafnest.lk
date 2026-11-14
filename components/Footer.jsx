@@ -68,7 +68,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
           {/* Brand info & Social Media */}
           <div className="lg:col-span-5">
-            <Logo light className="h-9 w-auto" />
+            <Logo light className="h-9 w-auto sm:h-10 lg:h-11" />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-400">
               Leafnest.lk is Sri Lanka&apos;s premier online store for realistic artificial plants, stylish pots, and nature-inspired home décor.
             </p>

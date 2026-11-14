@@ -116,14 +116,14 @@ Please confirm my order and let me know the island-wide delivery details.`;
 
       {/* 2. MAIN NAVIGATION HEADER */}
       <header className="sticky top-0 z-40 w-full border-b border-neutral-200/70 bg-white/90 backdrop-blur-md transition-all">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Left: Official Brand Logo */}
+        <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          {/* Left: Official Brand Logo - Enlarged and responsive for clear visibility on mobile */}
           <Link
             href="/"
-            className="flex items-center transition-transform hover:opacity-95"
+            className="flex items-center transition-transform hover:opacity-95 py-1"
             aria-label="Leafnest.lk Home"
           >
-            <Logo className="h-8 w-auto lg:h-10" />
+            <Logo className="h-11 w-auto sm:h-12 lg:h-14" />
           </Link>
 
           {/* Center: Desktop Navigation Links */}
@@ -225,12 +225,12 @@ Please confirm my order and let me know the island-wide delivery details.`;
               <Search className="h-5 w-5" />
             </button>
 
-            {/* Account / User Trigger */}
+            {/* Account / User Trigger - visible on sm+ to keep mobile header clean and spacious */}
             <a
               href={whatsappLink("Hi Leafnest.lk, I'd like to ask about my order.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-black"
+              className="hidden sm:inline-flex rounded-full p-2 text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-black"
               aria-label="Customer Account / Support"
               title="Customer Support"
             >
@@ -320,6 +320,17 @@ Please confirm my order and let me know the island-wide delivery details.`;
               >
                 Contact
               </Link>
+              <div className="pt-2">
+                <a
+                  href={whatsappLink("Hi Leafnest.lk, I'd like to ask about your artificial plants / order.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-forest px-4 py-2.5 text-xs font-semibold text-cream shadow-sm hover:opacity-95"
+                >
+                  <PhoneCall className="h-4 w-4" />
+                  <span>WhatsApp Support (077 583 5445)</span>
+                </a>
+              </div>
             </nav>
           </div>
         )}
