@@ -5,26 +5,28 @@ import PlantArt from "@/components/PlantArt";
 import ProductCard, { StockTag } from "@/components/ProductCard";
 import ProductActions from "@/components/ProductActions";
 import { getProduct, getCategory, products, formatPrice } from "@/lib/products";
+import { getProductById, getAllProducts } from "@/lib/dataService";
 import { whatsappLink } from "@/lib/config";
 import { Truck, ShieldCheck, PhoneCall, Check, ArrowLeft } from "lucide-react";
 
-export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
-}
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-export function generateMetadata({ params }) {
-  const p = getProduct(params.slug);
+export async function generateMetadata({ params }) {
+  const p = (await getProductById(params.slug)) || getProduct(params.slug);
   return {
     title: p ? `${p.name} | Leafnest.lk` : "Product",
     description: p ? p.description : undefined,
   };
 }
 
-export default function ProductPage({ params }) {
-  const p = getProduct(params.slug);
+export default async function ProductPage({ params }) {
+  const p = (await getProductById(params.slug)) || getProduct(params.slug);
   if (!p) notFound();
+  const allProducts = await getAllProducts();
+  const activeProducts = allProducts && allProducts.length > 0 ? allProducts : products;
   const cat = getCategory(p.category);
-  const related = products
+  const related = activeProducts
     .filter((x) => x.category === p.category && x.slug !== p.slug)
     .slice(0, 4);
   const out = p.stock === "out";

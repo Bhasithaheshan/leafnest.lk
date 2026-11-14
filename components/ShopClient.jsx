@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import { categories, products, getCategory } from "@/lib/products";
 import { Search, SlidersHorizontal } from "lucide-react";
 
-export default function ShopClient() {
+export default function ShopClient({ initialProducts = [] }) {
   const params = useSearchParams();
   const router = useRouter();
   const rawCat = params.get("category") || "all";
@@ -18,11 +18,13 @@ export default function ShopClient() {
   const [sort, setSort] = useState("featured");
   const [inStockOnly, setInStockOnly] = useState(false);
 
+  const allProducts = initialProducts && initialProducts.length > 0 ? initialProducts : products;
+
   const setCategory = (slug) =>
     router.push(slug === "all" ? "/shop" : `/shop?category=${slug}`, { scroll: false });
 
   const list = useMemo(() => {
-    let r = products.filter(
+    let r = allProducts.filter(
       (p) => currentCategory === "all" || p.category === currentCategory
     );
     const q = query.trim().toLowerCase();

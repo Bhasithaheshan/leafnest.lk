@@ -2,6 +2,11 @@ import { Suspense } from "react";
 import ShopClient from "@/components/ShopClient";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { getAllProducts } from "@/lib/dataService";
+import { products } from "@/lib/products";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata = {
   title: "Shop Artificial Plants & Pots | Leafnest.lk",
@@ -9,7 +14,10 @@ export const metadata = {
     "Explore our collection of realistic artificial plants, stylish pots, and home décor accessories in Sri Lanka.",
 };
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const liveProducts = await getAllProducts();
+  const activeProducts = liveProducts && liveProducts.length > 0 ? liveProducts : products;
+
   return (
     <div className="min-h-screen bg-[#FAF9F7] pt-8 text-neutral-900">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -36,7 +44,7 @@ export default function ShopPage() {
         </div>
 
         <Suspense fallback={<p className="text-sm text-neutral-500 py-10">Loading catalogue…</p>}>
-          <ShopClient />
+          <ShopClient initialProducts={activeProducts} />
         </Suspense>
       </div>
     </div>

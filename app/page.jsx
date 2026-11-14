@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ProductCard from "@/components/ProductCard";
 import { categories, products } from "@/lib/products";
+import { getAllProducts } from "@/lib/dataService";
 import {
   ArrowRight,
   Leaf,
@@ -14,8 +15,13 @@ import {
 } from "lucide-react";
 import { whatsappLink } from "@/lib/config";
 
-export default function Home() {
-  const featured = products.filter((p) => p.stock !== "out").slice(0, 8);
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+export default async function Home() {
+  const liveProducts = await getAllProducts();
+  const activeProducts = liveProducts && liveProducts.length > 0 ? liveProducts : products;
+  const featured = activeProducts.filter((p) => p.stock !== "out").slice(0, 8);
 
   const trustBadges = [
     {
