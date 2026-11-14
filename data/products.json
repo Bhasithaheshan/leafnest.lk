@@ -1,264 +1,41 @@
 [
   {
-    "id": "prod-1",
-    "slug": "artificial-monstera-deliciosa",
-    "name": "Artificial Monstera Deliciosa Plant",
+    "id": "7a0f3382-d55c-4688-8096-8b7ce1e09bee",
+    "slug": "eucalyptus",
+    "name": "Eucalyptus Potted Grass Artificial Plants",
     "category": "artificial-plants",
-    "price": 3800,
-    "oldPrice": 4500,
+    "price": 790,
+    "oldPrice": null,
     "stock": "in",
-    "size": "Approx. 65 cm tall, in weighted pot base",
-    "material": "Textured silk-polymer leaves, lifelike stems, weighted base",
-    "description": "The iconic split-leaf Swiss Cheese plant in an ultra-realistic artificial finish. Handcrafted leaves with natural gloss that never need watering, misting, or sunlight.",
+    "size": "18cm * 20cm",
+    "material": "High-grade artificial polymer with realistic texture & white ceramic/matte pot",
+    "description": "Bring a touch of greenery into your space with our beautiful collection of Artificial Mini Potted Plants. Featuring a variety of natural-looking green plant designs in elegant white pots, these decorative plants are perfect for adding a fresh, calming touch to any corner of your home or workspace.\n\nEnjoy the beauty of greenery without the need for watering, sunlight, or regular maintenance.",
     "features": [
       "Zero watering or care required",
-      "Realistic embossed leaf veins",
-      "Weighted pot base for stability",
-      "Fade resistant polymer"
-    ],
-    "care": [
-      "Dust leaves occasionally with a soft dry cloth",
-      "Keep away from harsh direct outdoor rain"
-    ],
-    "image": "/images/products/monstera.jpg",
-    "images": [
-      "/images/products/monstera.jpg",
-      "/images/hero-composition.jpg",
-      "/images/cat-artificial-hd.jpg"
-    ],
-    "badge": "Best Seller",
-    "featured": true,
-    "createdAt": "2026-11-01T10:00:00.000Z"
-  },
-  {
-    "id": "prod-2",
-    "slug": "artificial-fiddle-leaf-fig",
-    "name": "Artificial Fiddle Leaf Fig Tree",
-    "category": "artificial-plants",
-    "price": 5500,
-    "oldPrice": 6500,
-    "stock": "in",
-    "size": "Approx. 90 cm tall",
-    "material": "Textured polymer leaves with realistic trunk and weighted pot",
-    "description": "The stately elegance of a fiddle leaf fig tree without any of the finicky maintenance. Natural veined leaves and lifelike branches suit living rooms and offices.",
-    "features": [
-      "No watering or sunlight needed",
-      "Handcrafted lifelike foliage",
+      "Realistic embossed leaf texture",
       "Weighted base for stability",
-      "Evergreen appearance"
+      "Compact tabletop & shelf size"
     ],
     "care": [
       "Dust leaves occasionally with a soft dry cloth",
-      "Keep away from prolonged outdoor sun exposure"
+      "Keep away from prolonged heavy outdoor rain"
     ],
-    "image": "/images/products/fiddle-leaf.jpg",
+    "image": "/images/products/ap.jpg",
     "images": [
-      "/images/products/fiddle-leaf.jpg",
-      "/images/hero-plants-hd.jpg",
-      "/images/cat-artificial.webp"
+      "/images/products/ap.jpg",
+      "/images/products/a1.jpg",
+      "/images/products/a2.jpg",
+      "/images/products/a3.jpg",
+      "/images/products/a4.jpg",
+      "/images/products/a5.jpg",
+      "/images/products/a6.jpg",
+      "/images/products/a7.jpg",
+      "/images/products/a8.jpg",
+      "/images/products/a9.jpg",
+      "/images/products/a10.jpg"
     ],
-    "badge": "Popular",
+    "badge": "New Arrival",
     "featured": true,
-    "createdAt": "2026-11-02T10:00:00.000Z"
-  },
-  {
-    "id": "prod-3",
-    "slug": "artificial-hanging-ivy",
-    "name": "Artificial Trailing Ivy Vines",
-    "category": "artificial-plants",
-    "price": 1400,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Approx. 120 cm length",
-    "material": "Silk-blend leaves and flexible wired stem",
-    "description": "Cascading botanical greenery to drape over bookshelves, wall brackets, or hanging planters for an instant lush green waterfall effect.",
-    "features": [
-      "Trailing cascade effect",
-      "Lightweight and flexible",
-      "Ready to hang anywhere",
-      "Zero maintenance"
-    ],
-    "care": [
-      "Gently wipe with a damp microfiber cloth when dusty"
-    ],
-    "image": "/images/products/ivy.jpg",
-    "badge": null,
-    "featured": false,
-    "createdAt": "2026-11-03T10:00:00.000Z"
-  },
-  {
-    "id": "prod-4",
-    "slug": "artificial-snake-plant",
-    "name": "Artificial Sansevieria Snake Plant",
-    "category": "artificial-plants",
-    "price": 2400,
-    "oldPrice": 2900,
-    "stock": "in",
-    "size": "Approx. 50 cm tall",
-    "material": "High-density polymer with yellow variegated margins",
-    "description": "Architectural upright artificial snake plant with striking yellow-green banded foliage. Adds modern clean lines to desks and corners without any watering.",
-    "features": [
-      "No watering needed",
-      "Distinctive variegated pattern",
-      "Compact modern look",
-      "Zero care"
-    ],
-    "care": [
-      "Wipe clean with a dry cloth"
-    ],
-    "image": "/images/products/snake-plant.jpg",
-    "badge": null,
-    "featured": false,
-    "createdAt": "2026-11-04T10:00:00.000Z"
-  },
-  {
-    "id": "prod-5",
-    "slug": "artificial-succulent-set",
-    "name": "Minimalist Potted Succulent Trio",
-    "category": "artificial-plants",
-    "price": 1650,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Set of 3, approx. 10 cm each",
-    "material": "Matte ceramic pots with lifelike artificial succulents",
-    "description": "A charming trio of potted artificial succulents for study desks, bedside tables, bathroom counters, and coffee tables.",
-    "features": [
-      "Curated set of 3 distinct varieties",
-      "White ceramic pots included",
-      "Compact tabletop size",
-      "Ready to display"
-    ],
-    "care": [
-      "Dust with a soft brush as needed"
-    ],
-    "image": "/images/products/succulent.jpg",
-    "badge": null,
-    "featured": false,
-    "createdAt": "2026-11-05T10:00:00.000Z"
-  },
-  {
-    "id": "prod-6",
-    "slug": "minimal-ceramic-pot-white",
-    "name": "Minimal Ceramic Pot – Matte White",
-    "category": "pots-planters",
-    "price": 1800,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Approx. 15 cm diameter × 14 cm height",
-    "material": "High-fired ceramic with matte satin glaze",
-    "description": "A timeless, minimalist ceramic pot with a seamless profile that puts your greenery at center stage. Includes a matching drainage saucer.",
-    "features": [
-      "Handcrafted ceramic",
-      "Matte satin glaze finish",
-      "Suits artificial and decorative plants",
-      "Clean minimalist lines"
-    ],
-    "care": [
-      "Wipe clean with a damp cloth"
-    ],
-    "image": "/images/products/ceramic-pot.jpg",
-    "badge": null,
-    "featured": true,
-    "createdAt": "2026-11-06T10:00:00.000Z"
-  },
-  {
-    "id": "prod-7",
-    "slug": "modern-indoor-planter",
-    "name": "Modern Ribbed Cylinder Planter",
-    "category": "pots-planters",
-    "price": 2400,
-    "oldPrice": 2800,
-    "stock": "low",
-    "size": "Approx. 22 cm diameter × 20 cm height",
-    "material": "Textured ceramic with subtle architectural ribs",
-    "description": "A substantial architectural planter with tactile ribbing, crafted for medium-to-large statement plants like artificial Monsteras and Ficus trees.",
-    "features": [
-      "Statement architectural shape",
-      "Heavyweight stable base",
-      "Subtle ribbed texture",
-      "Designer neutral tone"
-    ],
-    "care": [
-      "Wipe clean with warm water and a soft sponge"
-    ],
-    "image": "/images/products/modern-planter.jpg",
-    "badge": "Low Stock",
-    "featured": false,
-    "createdAt": "2026-11-07T10:00:00.000Z"
-  },
-  {
-    "id": "prod-8",
-    "slug": "hanging-planter",
-    "name": "Nordic Ceramic Hanging Planter",
-    "category": "pots-planters",
-    "price": 1200,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Approx. 14 cm diameter, with 60 cm suspension cord",
-    "material": "Glazed stoneware with natural cotton suspension rope",
-    "description": "Free up shelf space and bring dynamic vertical greenery into your room with this Scandinavian-inspired hanging planter for artificial trailing plants.",
-    "features": [
-      "Heavy-duty adjustable suspension rope",
-      "Seamless stoneware bowl",
-      "Ideal for trailing artificial ivy",
-      "Easy to hang"
-    ],
-    "care": [
-      "Wipe stoneware with a damp cloth"
-    ],
-    "image": "/images/products/hanging-planter.jpg",
-    "badge": null,
-    "featured": false,
-    "createdAt": "2026-11-08T10:00:00.000Z"
-  },
-  {
-    "id": "prod-9",
-    "slug": "metal-watering-can",
-    "name": "Matte Black Precision Watering Can",
-    "category": "accessories-decor",
-    "price": 2100,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Approx. 1.5 L capacity",
-    "material": "Stainless steel with powder-coated matte finish",
-    "description": "An elegant slim-necked watering can that doubles as a sculptural design object for shelves and sideboards.",
-    "features": [
-      "Long slender spout",
-      "Ergonomic wooden handle",
-      "Rust-resistant matte powder coating",
-      "Sculptural home décor piece"
-    ],
-    "care": [
-      "Wipe dry with a soft cloth"
-    ],
-    "image": "/images/products/watering-can.jpg",
-    "badge": null,
-    "featured": false,
-    "createdAt": "2026-11-09T10:00:00.000Z"
-  },
-  {
-    "id": "prod-10",
-    "slug": "plant-stand-wooden",
-    "name": "Solid Teak Adjustable Plant Stand",
-    "category": "accessories-decor",
-    "price": 3200,
-    "oldPrice": null,
-    "stock": "in",
-    "size": "Approx. 35 cm height, adjusts from 20cm to 30cm pot width",
-    "material": "Sustainably sourced Sri Lankan natural teak wood",
-    "description": "Elevate your potted artificial plants into striking statement pieces. Handcrafted from solid teak with a water-resistant matte oil finish.",
-    "features": [
-      "Solid natural teak construction",
-      "Adjustable width mechanism",
-      "Elevates plants to optimal display height",
-      "Floor protection pads"
-    ],
-    "care": [
-      "Wipe with a clean dry cloth"
-    ],
-    "image": "/images/products/plant-stand.jpg",
-    "badge": "Crafted in SL",
-    "featured": true,
-    "createdAt": "2026-11-10T10:00:00.000Z"
+    "createdAt": "2026-11-14T07:27:34.375705+00:00"
   }
 ]

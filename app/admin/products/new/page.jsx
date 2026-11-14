@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ArrowLeft, Save, Sparkles, AlertCircle } from "lucide-react";
 
 const IMAGE_PRESETS = [
+  { label: "Cover (AP)", url: "/images/products/ap.jpg" },
   { label: "Photo A1", url: "/images/products/a1.jpg" },
   { label: "Photo A2", url: "/images/products/a2.jpg" },
   { label: "Photo A3", url: "/images/products/a3.jpg" },
@@ -17,17 +18,6 @@ const IMAGE_PRESETS = [
   { label: "Photo A8", url: "/images/products/a8.jpg" },
   { label: "Photo A9", url: "/images/products/a9.jpg" },
   { label: "Photo A10", url: "/images/products/a10.jpg" },
-  { label: "Photo AP", url: "/images/products/ap.jpg" },
-  { label: "Monstera", url: "/images/products/monstera.jpg" },
-  { label: "Fiddle Leaf", url: "/images/products/fiddle-leaf.jpg" },
-  { label: "Trailing Ivy", url: "/images/products/ivy.jpg" },
-  { label: "Snake Plant", url: "/images/products/snake-plant.jpg" },
-  { label: "Succulents", url: "/images/products/succulent.jpg" },
-  { label: "Ceramic Pot", url: "/images/products/ceramic-pot.jpg" },
-  { label: "Modern Planter", url: "/images/products/modern-planter.jpg" },
-  { label: "Hanging Planter", url: "/images/products/hanging-planter.jpg" },
-  { label: "Watering Can", url: "/images/products/watering-can.jpg" },
-  { label: "Plant Stand", url: "/images/products/plant-stand.jpg" },
 ];
 
 export default function AddProductPage() {
@@ -44,7 +34,7 @@ export default function AddProductPage() {
     stock: "in",
     badge: "",
     featured: false,
-    image: "/images/products/monstera.jpg",
+    image: "/images/products/ap.jpg",
     extraImagesText: "",
     size: "",
     material: "",
