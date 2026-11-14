@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ord-1001",
+    "orderNumber": "LN-1001",
+    "customerName": "Kasun Perera",
+    "customerPhone": "0771234567",
+    "customerAddress": "No. 45, Temple Road, Nawala",
+    "customerCity": "Rajagiriya",
+    "items": [
+      {
+        "name": "Artificial Monstera Deliciosa Plant",
+        "slug": "artificial-monstera-deliciosa",
+        "quantity": 1,
+        "price": 3800
+      },
+      {
+        "name": "Modern Ribbed Cylinder Planter",
+        "slug": "modern-indoor-planter",
+        "quantity": 1,
+        "price": 2400
+      }
+    ],
+    "totalAmount": 6200,
+    "paymentMethod": "WhatsApp Order",
+    "status": "confirmed",
+    "notes": "Deliver during weekdays before 5 PM",
+    "createdAt": "2026-11-12T14:30:00.000Z"
+  },
+  {
+    "id": "ord-1002",
+    "orderNumber": "LN-1002",
+    "customerName": "Dilini Jayasinghe",
+    "customerPhone": "0719876543",
+    "customerAddress": "12/B, Flower Road",
+    "customerCity": "Colombo 07",
+    "items": [
+      {
+        "name": "Artificial Fiddle Leaf Fig Tree",
+        "slug": "artificial-fiddle-leaf-fig",
+        "quantity": 1,
+        "price": 5500
+      }
+    ],
+    "totalAmount": 5500,
+    "paymentMethod": "WhatsApp Order",
+    "status": "shipped",
+    "notes": "Sent tracking via Koombiyo courier",
+    "createdAt": "2026-11-13T09:15:00.000Z"
+  },
+  {
+    "id": "ord-1003",
+    "orderNumber": "LN-1003",
+    "customerName": "Sahan Fernando",
+    "customerPhone": "0765551234",
+    "customerAddress": "88, Beach Road",
+    "customerCity": "Negombo",
+    "items": [
+      {
+        "name": "Minimalist Potted Succulent Trio",
+        "slug": "artificial-succulent-set",
+        "quantity": 2,
+        "price": 1650
+      }
+    ],
+    "totalAmount": 3300,
+    "paymentMethod": "WhatsApp Order",
+    "status": "pending",
+    "notes": "Waiting for customer confirmation on WhatsApp",
+    "createdAt": "2026-11-13T16:45:00.000Z"
+  }
+]

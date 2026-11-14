@@ -159,7 +159,16 @@ export default function Footer() {
 
         {/* Bottom copyright & Socials shortcut */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-neutral-800/80 pt-8 text-xs text-neutral-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Leafnest.lk. All rights reserved. Bring Nature Home.</p>
+          <div className="flex items-center gap-2">
+            <p>© {new Date().getFullYear()} Leafnest.lk. All rights reserved. Bring Nature Home.</p>
+            <Link
+              href="/admin"
+              className="text-neutral-600 hover:text-neutral-400 transition-colors"
+              title="Admin Portal"
+            >
+              • Admin
+            </Link>
+          </div>
           <div className="flex items-center gap-4 text-neutral-400">
             <a
               href={SOCIAL_LINKS.facebook}
