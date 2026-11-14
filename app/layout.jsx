@@ -1,8 +1,6 @@
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import StorefrontShell from "@/components/StorefrontShell";
 import { CartProvider } from "@/lib/cartContext";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
@@ -30,10 +28,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={manrope.variable}>
       <body>
         <CartProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <FloatingWhatsApp />
+          <StorefrontShell>{children}</StorefrontShell>
         </CartProvider>
       </body>
     </html>

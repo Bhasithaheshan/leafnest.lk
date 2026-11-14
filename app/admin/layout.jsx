@@ -76,9 +76,9 @@ export default function AdminLayout({ children }) {
         </button>
       </div>
 
-      {/* SIDEBAR NAVIGATION (Desktop & Mobile Drawer) */}
+      {/* SIDEBAR NAVIGATION (Desktop Fixed & Mobile Drawer) */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col justify-between border-r border-white/10 bg-[#121914] p-5 transition-transform duration-300 md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-64 flex-col justify-between border-r border-white/10 bg-[#121914] p-5 transition-transform duration-300 md:sticky md:top-0 md:h-screen md:shrink-0 md:translate-x-0 md:overflow-y-auto ${
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
