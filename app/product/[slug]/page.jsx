@@ -39,26 +39,26 @@ export default async function ProductPage({ params }) {
   ].filter(([, v]) => v);
 
   return (
-    <div className="min-h-screen bg-[#FAF9F7] py-10 text-neutral-900">
+    <div className="min-h-screen bg-[#FAF9F7] py-6 sm:py-10 text-neutral-900 overflow-x-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-neutral-500">
-          <Link href="/shop" className="inline-flex items-center gap-1 hover:text-black">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs font-medium text-neutral-500 overflow-hidden text-ellipsis whitespace-nowrap py-1">
+          <Link href="/shop" className="inline-flex items-center gap-1 hover:text-black shrink-0">
             <ArrowLeft className="h-3.5 w-3.5" />
-            Shop
+            <span>Shop</span>
           </Link>
-          <span>/</span>
-          <Link href={`/shop?category=${p.category}`} className="hover:text-black">
-            {cat?.name}
+          <span className="shrink-0 text-neutral-300">/</span>
+          <Link href={`/shop?category=${p.category}`} className="hover:text-black shrink-0">
+            {cat?.name || "Artificial Plants"}
           </Link>
-          <span>/</span>
-          <span className="text-neutral-900 truncate max-w-xs">{p.name}</span>
+          <span className="shrink-0 text-neutral-300">/</span>
+          <span className="text-neutral-900 font-semibold truncate">{p.name}</span>
         </nav>
 
         {/* Main Product Showcase */}
-        <div className="mt-8 grid gap-12 lg:grid-cols-12">
+        <div className="mt-6 md:mt-8 grid gap-8 lg:gap-12 lg:grid-cols-12 min-w-0">
           {/* Left: Product Image Gallery */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6 min-w-0 w-full">
             <ProductGallery
               images={p.images && p.images.length > 0 ? p.images : [p.image].filter(Boolean)}
               title={p.name}
@@ -70,21 +70,21 @@ export default async function ProductPage({ params }) {
           </div>
 
           {/* Right: Product Details & WhatsApp Order */}
-          <div className="flex flex-col justify-center lg:col-span-6">
+          <div className="flex flex-col lg:col-span-6 min-w-0 w-full">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-800">
-              {cat?.name}
+              {cat?.name || "Artificial Plants"}
             </span>
-            <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-neutral-900 sm:text-4xl">
+            <h1 className="mt-1.5 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-neutral-900">
               {p.name}
             </h1>
 
             {/* Price & Stock */}
-            <div className="mt-4 flex flex-wrap items-baseline gap-3">
-              <span className="text-3xl font-black text-neutral-900">
+            <div className="mt-3 flex flex-wrap items-center gap-3">
+              <span className="text-2xl sm:text-3xl font-black text-neutral-900">
                 {formatPrice(p.price)}
               </span>
               {p.oldPrice && (
-                <span className="text-base text-neutral-400 line-through">
+                <span className="text-sm font-medium text-neutral-400 line-through sm:text-base">
                   {formatPrice(p.oldPrice)}
                 </span>
               )}
@@ -95,19 +95,21 @@ export default async function ProductPage({ params }) {
               )}
             </div>
 
-            <p className="mt-6 text-sm leading-relaxed text-neutral-600 sm:text-base">
+            <p className="mt-4 sm:mt-6 text-sm leading-relaxed text-neutral-600 sm:text-base">
               {p.description}
             </p>
 
             {/* Specs Table */}
-            <dl className="mt-6 divide-y divide-neutral-100 rounded-2xl border border-neutral-200/80 bg-white/80 px-5 text-xs sm:text-sm">
-              {details.map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-4 py-3">
-                  <dt className="font-semibold text-neutral-500">{k}</dt>
-                  <dd className="text-right font-medium text-neutral-900">{v}</dd>
-                </div>
-              ))}
-            </dl>
+            {details.length > 0 && (
+              <dl className="mt-6 divide-y divide-neutral-100 rounded-2xl border border-neutral-200/80 bg-white/80 px-4 py-1 sm:px-5 text-xs sm:text-sm">
+                {details.map(([k, v]) => (
+                  <div key={k} className="flex items-center justify-between gap-4 py-2.5 sm:py-3">
+                    <dt className="shrink-0 font-semibold text-neutral-500">{k}</dt>
+                    <dd className="text-right font-medium text-neutral-900 break-words max-w-[65%]">{v}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
 
             {/* Quantity Selector, Add To Cart & Buy Now Buttons */}
             <ProductActions product={p} />
@@ -115,11 +117,11 @@ export default async function ProductPage({ params }) {
             {/* Trust Badges */}
             <div className="mt-6 grid grid-cols-2 gap-3 border-t border-neutral-200/80 pt-6">
               <div className="flex items-center gap-2 text-xs text-neutral-600">
-                <Truck className="h-4 w-4 text-neutral-800" />
+                <Truck className="h-4 w-4 shrink-0 text-emerald-700" />
                 <span>Island-wide secure dispatch</span>
               </div>
               <div className="flex items-center gap-2 text-xs text-neutral-600">
-                <ShieldCheck className="h-4 w-4 text-neutral-800" />
+                <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-700" />
                 <span>100% Quality guarantee</span>
               </div>
             </div>
@@ -127,7 +129,7 @@ export default async function ProductPage({ params }) {
         </div>
 
         {/* Features & Maintenance */}
-        <div className="mt-16 grid gap-8 rounded-3xl border border-neutral-200/80 bg-white/60 p-8 sm:p-12 md:grid-cols-2">
+        <div className="mt-10 sm:mt-16 grid gap-6 sm:gap-8 rounded-3xl border border-neutral-200/80 bg-white/70 p-6 sm:p-8 md:p-12 md:grid-cols-2">
           {p.features?.length > 0 && (
             <div>
               <h2 className="text-lg font-bold text-neutral-900">Key Features</h2>

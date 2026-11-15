@@ -46,12 +46,12 @@ Please confirm my order and island-wide delivery details.`;
 
   if (isOutOfStock) {
     return (
-      <div className="mt-8 flex flex-col gap-3">
+      <div className="mt-6 flex flex-col gap-3 w-full">
         <a
           href={whatsappLink(`Hi Leafnest.lk, when will "${product.name}" be back in stock?`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-12 w-full items-center justify-center rounded-md border-2 border-forest font-semibold text-forest transition-colors hover:bg-forest hover:text-cream"
+          className="flex h-12 w-full items-center justify-center rounded-xl border-2 border-forest font-semibold text-forest transition-colors hover:bg-forest hover:text-cream"
         >
           Ask about restock on WhatsApp
         </a>
@@ -60,59 +60,62 @@ Please confirm my order and island-wide delivery details.`;
   }
 
   return (
-    <div className="mt-8 flex flex-wrap items-center gap-3">
-      {/* 1. Quantity Selector matching user image */}
-      <div className="flex h-12 items-center rounded-md border border-neutral-300 bg-white px-2 select-none">
+    <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full">
+      {/* Row 1 on mobile: Quantity selector + Add To Cart button */}
+      <div className="flex items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
+        {/* Quantity Selector */}
+        <div className="flex h-12 items-center rounded-xl border border-neutral-300 bg-white px-2 select-none shrink-0 shadow-2xs">
+          <button
+            type="button"
+            onClick={handleDecrement}
+            disabled={quantity <= 1}
+            className="flex h-8 w-8 items-center justify-center text-neutral-600 transition-colors hover:text-black disabled:opacity-30 disabled:hover:text-neutral-600"
+            aria-label="Decrease quantity"
+          >
+            <Minus className="h-3.5 w-3.5" />
+          </button>
+
+          <span className="w-8 text-center font-bold text-neutral-900 text-sm">
+            {quantity}
+          </span>
+
+          <button
+            type="button"
+            onClick={handleIncrement}
+            className="flex h-8 w-8 items-center justify-center text-neutral-600 transition-colors hover:text-black"
+            aria-label="Increase quantity"
+          >
+            <Plus className="h-3.5 w-3.5" />
+          </button>
+        </div>
+
+        {/* Add To Cart Button */}
         <button
           type="button"
-          onClick={handleDecrement}
-          disabled={quantity <= 1}
-          className="flex h-8 w-8 items-center justify-center text-neutral-600 transition-colors hover:text-black disabled:opacity-30 disabled:hover:text-neutral-600"
-          aria-label="Decrease quantity"
+          onClick={handleAddToCart}
+          className="flex h-12 flex-1 sm:flex-initial sm:px-6 items-center justify-center gap-2 rounded-xl bg-forest px-4 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-nature active:scale-[0.98]"
         >
-          <Minus className="h-3.5 w-3.5" />
-        </button>
-
-        <span className="w-10 text-center font-semibold text-neutral-900 text-sm">
-          {quantity}
-        </span>
-
-        <button
-          type="button"
-          onClick={handleIncrement}
-          className="flex h-8 w-8 items-center justify-center text-neutral-600 transition-colors hover:text-black"
-          aria-label="Increase quantity"
-        >
-          <Plus className="h-3.5 w-3.5" />
+          {added ? (
+            <>
+              <Check className="h-4 w-4" />
+              <span>Added!</span>
+            </>
+          ) : (
+            <>
+              <ShoppingBag className="h-4 w-4" />
+              <span>Add To Cart</span>
+            </>
+          )}
         </button>
       </div>
 
-      {/* 2. Add To Cart Button (Filled, Forest brand colour) */}
-      <button
-        type="button"
-        onClick={handleAddToCart}
-        className="flex h-12 flex-1 min-w-[140px] items-center justify-center gap-2 rounded-md bg-forest px-6 text-sm font-semibold text-cream shadow-sm transition-all hover:bg-nature active:scale-[0.99]"
-      >
-        {added ? (
-          <>
-            <Check className="h-4 w-4" />
-            <span>Added!</span>
-          </>
-        ) : (
-          <>
-            <ShoppingBag className="h-4 w-4" />
-            <span>Add To Cart</span>
-          </>
-        )}
-      </button>
-
-      {/* 3. Buy Now Button (Bordered, Forest brand colour) */}
+      {/* Buy Now (WhatsApp direct order) button */}
       <button
         type="button"
         onClick={handleBuyNow}
-        className="flex h-12 flex-1 min-w-[130px] items-center justify-center rounded-md border-2 border-forest px-6 text-sm font-semibold text-forest transition-all hover:bg-forest hover:text-cream active:scale-[0.99]"
+        className="flex h-12 w-full sm:flex-1 items-center justify-center gap-2 rounded-xl border-2 border-forest bg-forest/5 px-6 text-sm font-semibold text-forest transition-all hover:bg-forest hover:text-cream active:scale-[0.98]"
       >
-        Buy Now
+        <span>Buy Now</span>
       </button>
     </div>
   );
